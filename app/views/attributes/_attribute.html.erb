@@ -1,0 +1,6 @@
+  <span class="attributes">  <%= attribute.content %> 
+ <%= link_to "[X]",  user_identity_attribute_path(@user.id, identity, attribute.id), method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   attribute.content %>
+
+ </span>

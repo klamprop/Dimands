@@ -1,0 +1,21 @@
+<% provide(:title, @user.name) %>
+ <div class="row">
+  <aside class="span4">
+   <section>
+    <h1>
+      <%= @user.name %>
+    </h1>
+      <li><%= link_to "Register new identity",  new_user_path %></li>
+    
+   </section>
+  </aside>
+  <div class="span8">
+    <% if @user.identities.any? %>
+      <h3>Registered Identities (<%= @user.identities.count %>)</h3>
+      <ol class="identities">
+        <%= render @identities %>
+      </ol>
+     <%= will_paginate @identities %>
+    <% end %>
+  </div>
+ </div>

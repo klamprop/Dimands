@@ -1,0 +1,35 @@
+<div class= "row-fluid">
+<div class= "span6">
+<li>
+  <span class="data"> Identifier:  <%= identity.identifier %></span>
+  <br/>
+  <span class="data"> Domain: <%= identity.domain %></span>
+  <br/>
+  <span class="data"> TRID: <%= identity.TRID %></span>
+  <br/>
+  <span class="data"> RID: <%= identity.RID %></span>
+  <br/>
+    <span class="data"> Attributes:
+    </span>
+         <% identity.attributes.each do |attribute| %>
+             <%= attribute.content %>
+             <%= link_to "[X]",  user_identity_attribute_path(@user.id, identity.id, attribute.id), method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   attribute.content %>
+
+          <%end%>
+    <br/>
+  <span class="timestamp">
+    Registered <%= time_ago_in_words(identity.created_at) %> ago.
+  </span>
+</li>
+</div>
+<div class= "span2 offset4">
+  <% if current_user?(identity.user) %>
+    <%= link_to " Delete Identity",  user_identity_path(@user.id, identity.id), method:  :delete,
+                                     confirm: "You sure?",
+                                     title:   identity.identifier %>
+         <%= link_to "New Attribute", new_user_identity_attribute_path(@user.id, identity.id)  %>
+  <% end %>
+</div>
+</div>

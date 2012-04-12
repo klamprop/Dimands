@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: identities
+#
+#  id         :integer         not null, primary key
+#  identifier :string(255)
+#  domain     :string(255)
+#  TRID       :integer
+#  RID        :integer
+#  user_id    :integer
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  identifier: MyString
+  domain: MyString
+  TRID: 1
+  RID: 1
+  user_id: 1
+
+two:
+  identifier: MyString
+  domain: MyString
+  TRID: 1
+  RID: 1
+  user_id: 1

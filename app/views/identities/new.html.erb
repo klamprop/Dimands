@@ -1,0 +1,17 @@
+<%= provide(:title, 'Register Identity') %>
+<h1>Register new identity</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for([@user, @identity]) do |f| %>
+
+      <%= f.label :identifier %>
+      <%= f.text_field :identifier %>
+
+      <%= f.label :domain %>
+      <%= f.text_field :domain %>
+
+      <%= f.submit "Register new identity", :class => "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

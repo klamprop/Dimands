@@ -1,0 +1,13 @@
+<%= provide(:title, 'Edit Attributes') %>
+<h1>Edit Attributes</h1>
+
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for([:user, :identity, @attribute]) do |f| %>
+
+      <%= f.select :content, [['Email','email'],['Age_validation','age_validation'], ['Authentication','authentication']]%>
+      <%= f.submit "Register new Attribute", :class => "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
