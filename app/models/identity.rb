@@ -13,9 +13,12 @@
 #
 
 class Identity < ActiveRecord::Base
-  attr_accessible :identifier, :domain
+  attr_accessible :identifier, :domain, :RID
   belongs_to :user
   has_many :attributes, dependent: :destroy
+#  has_many :identity_operation_associations
+#  has_many :attributes, :through => :identity_operation_associations, dependent: :destroy
+
 
   validates :identifier, presence: true
   validates :domain, presence:true

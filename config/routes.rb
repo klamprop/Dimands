@@ -1,5 +1,7 @@
 Dnode::Application.routes.draw do
 
+  resources :discovery_sessions
+
   resources :users do
    resources :identities do
     resources :attributes
@@ -22,6 +24,9 @@ Dnode::Application.routes.draw do
 
   match '/users/:user_id/identities/:id/new', to: 'identities#new'
   match '/users/:user_id/identities/:identity_id/attributes/:id/new', to: 'attributes#new'
+
+  match 'discoveries/:session_id.:format' => 'discoveries#show'
+
 
 #resources :users do 
 #  resources :identities 

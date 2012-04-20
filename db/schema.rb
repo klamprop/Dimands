@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120326123357) do
+ActiveRecord::Schema.define(:version => 20120412130906) do
 
   create_table "attributes", :force => true do |t|
     t.string   "content"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20120326123357) do
   end
 
   add_index "attributes", ["identity_id", "created_at"], :name => "index_attributes_on_identity_id_and_created_at"
+
+  create_table "discovery_sessions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "discovery_session_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "identities", :force => true do |t|
     t.string   "identifier"

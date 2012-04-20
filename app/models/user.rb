@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :username, :password, :password_confirmation
   has_secure_password
   has_many :identities, dependent: :destroy
+  has_many :discovery_sessions, dependent: :destroy
 
   validates :name, presence: true
  
@@ -32,4 +33,16 @@ class User < ActiveRecord::Base
                        uniqueness: true
 
 #  validates :usid, uniqueness: true
+
+  def find_identities_by_attribute_name(operation_name)
+#    o = Attribute.find_by_content(operation_name)
+#    o = Attribute.where(:content => operation_name)
+    ret = []
+#    unless o.nil?
+      ret = self.identities.reject {|i| not i.attributes.include? i.attributes.find_by_content(operation_name)}
+#    end
+    return ret
+  end
+
+
 end

@@ -12,6 +12,7 @@
 class Attribute < ActiveRecord::Base
   attr_accessible :content
   belongs_to :identity
+  has_many :identities
 
   validates :content, presence: true
   validates :identity_id, presence: true
