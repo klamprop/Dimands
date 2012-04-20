@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: discovery_sessions
+#
+#  id                   :integer         not null, primary key
+#  RID                  :integer
+#  discovery_session_id :integer
+#  created_at           :datetime        not null
+#  updated_at           :datetime        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 1
+  dimands_session: 1
+
+two:
+  user: 1
+  dimands_session: 1

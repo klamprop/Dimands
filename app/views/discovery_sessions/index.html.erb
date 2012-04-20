@@ -1,0 +1,25 @@
+<h1>Listing discovery_sessions</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Dimands session</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @discovery_sessions.each do |discovery_session| %>
+  <tr>
+    <td><%= discovery_session.user %></td>
+    <td><%= discovery_session.dimands_session %></td>
+    <td><%= link_to 'Show', discovery_session %></td>
+    <td><%= link_to 'Edit', edit_discovery_session_path(discovery_session) %></td>
+    <td><%= link_to 'Destroy', discovery_session, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Discovery session', new_discovery_session_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @discovery_session.user %>
+</p>
+
+<p>
+  <b>Dimands session:</b>
+  <%= @discovery_session.dimands_session %>
+</p>
+
+
+<%= link_to 'Edit', edit_discovery_session_path(@discovery_session) %> |
+<%= link_to 'Back', discovery_sessions_path %>
